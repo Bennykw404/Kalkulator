@@ -775,3 +775,51 @@ function hitungStockAkhir() {
         swal('Data tidak ditemukan', 'Masukkan tinggi tangki yang sesuai.', 'error');
        } 
      }
+document.addEventListener("DOMContentLoaded", function() {
+  const inputFields = document.querySelectorAll('input[type="number"]');
+  const chart = document.getElementById('chart');
+
+  inputFields.forEach(input => {
+    input.addEventListener('input', updateChart);
+  });
+
+  function updateChart() {
+    const dp1Stock = getInputStock('1');
+    const dp2Stock = getInputStock('2');
+    const dp3Stock = getInputStock('3');
+
+    const totalStock = {
+      "blue": (dp1Stock.blue + dp2Stock.blue + dp3Stock.blue) * 6,
+      "brown": (dp1Stock.brown + dp2Stock.brown + dp3Stock.brown) * 6,
+      "yellow": (dp1Stock.yellow + dp2Stock.yellow + dp3Stock.yellow) * 6,
+      "black": (dp1Stock.black + dp2Stock.black + dp3Stock.black) * 6
+    };
+
+    renderChart(totalStock);
+  }
+
+  function getInputStock(dp) {
+    return {
+      "blue": parseInt(document.getElementById(`blue${dp}`).value),
+      "brown": parseInt(document.getElementById(`brown${dp}`).value),
+      "yellow": parseInt(document.getElementById(`yellow${dp}`).value),
+      "black": parseInt(document.getElementById(`black${dp}`).value)
+    };
+  }
+
+  function renderChart(stock) {
+    chart.innerHTML = '';
+
+    const total = Object.values(stock).reduce((acc, curr) => acc + curr);
+
+    for (const color in stock) {
+      const bar = document.createElement('div');
+      bar.className = 'bar';
+      bar.style.height = `${(stock[color] / total) * 100}%`;
+      bar.innerText = `${color} - ${stock[color]}`;
+      chart.appendChild(bar);
+    }
+  }
+
+  updateChart();
+});
