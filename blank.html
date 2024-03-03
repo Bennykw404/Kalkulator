@@ -1,160 +1,160 @@
-<!DOCTYPE html> 
- <html lang="en"> 
- <head> 
-   <meta charset="UTF-8"> 
-   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport"> 
-   <title>Digital Printing &mdash; Kalkulator</title> 
+<!DOCTYPE html>  
+  <html lang="en">  
+  <head>  
+    <meta charset="UTF-8">  
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">  
+    <title>Digital Printing &mdash; Kalkulator</title>  
   
-   <!-- General CSS Files --> 
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> 
+    <!-- General CSS Files -->  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">  
   
-   <!-- CSS Libraries --> 
+    <!-- CSS Libraries -->  
   
-   <!-- Template CSS --> 
-   <link rel="stylesheet" href="assets/css/style.css"> 
-   <link rel="stylesheet" href="assets/css/components.css"> 
- </head> 
+    <!-- Template CSS -->  
+    <link rel="stylesheet" href="assets/css/style.css">  
+    <link rel="stylesheet" href="assets/css/components.css">  
+  </head>  
   
- <body> 
-   <div id="app"> 
-     <div class="main-wrapper"> 
-       <div class="navbar-bg"></div> 
-       <nav class="navbar navbar-expand-lg main-navbar"> 
-         <form class="form-inline mr-auto"> 
-           <ul class="navbar-nav mr-3"> 
-             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li> 
-           </ul> 
-         </form> 
-       </nav> 
-       <div class="main-sidebar sidebar-style-2"> 
-         <aside id="sidebar-wrapper"> 
-           <div class="sidebar-brand"> 
-             <a href="*">DP - HT1</a> 
-           </div> 
-           <ul class="sidebar-menu"> 
-                         <li><a class="nav-link" href="index.html"><i class="fas fa-tint"></i><span>Kalkulator Stock Tinta</span></a></a>
-                
-               <li><a class="nav-link" href="kalkulator.html"><i class="fas fa-pencil-ruler"></i><span>Kapasitas Tinta</span></a></li> 
-               <li class="active"><a class="nav-link" href="blank.html"><i class="fas fa-tint"></i><span>Stock Tinta Akhir Shift</span></a></li>
-            </ul> 
-         </aside> 
-       </div> 
+  <body>  
+    <div id="app">  
+      <div class="main-wrapper">  
+        <div class="navbar-bg"></div>  
+        <nav class="navbar navbar-expand-lg main-navbar">  
+          <form class="form-inline mr-auto">  
+            <ul class="navbar-nav mr-3">  
+              <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>  
+            </ul>  
+          </form>  
+        </nav>  
+        <div class="main-sidebar sidebar-style-2">  
+          <aside id="sidebar-wrapper">  
+            <div class="sidebar-brand">  
+              <a href="*">DP - HT1</a>  
+            </div>  
+            <ul class="sidebar-menu">  
+                          <li><a class="nav-link" href="index.html"><i class="fas fa-tint"></i><span>Kalkulator Stock Tinta</span></a></a> 
   
-       <!-- Main Content --> 
-       <div class="main-content"> 
-         <section class="section"> 
-           <div class="section-header"> 
-             <h1>Stock Tinta</h1> 
-           </div> 
+                <li><a class="nav-link" href="kalkulator.html"><i class="fas fa-pencil-ruler"></i><span>Kapasitas Tinta</span></a></li>  
+                <li class="active"><a class="nav-link" href="blank.html"><i class="fas fa-tint"></i><span>Stock Tinta Akhir Shift</span></a></li> 
+             </ul>  
+          </aside>  
+        </div>  
   
-           <div class="section-body"> 
-             <div class="row">
-              <div class="col-12 col-sm-5 col-lg-5">
-                <div class="card">
-                  <div class="card-header">
-                    <h4>Stock Tinta <code>Akhir Shift</code></code>
-                  </div>
-                  <div class="card-body">
-                    <ul class="nav nav-pills" id="myTab3" role="tablist">
-                      <li class="nav-item">
-                        <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true">DP 1</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false">DP 2</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false">DP 3</a>
-                      </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent2">
-                      <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
-                                           <div class="form-group"> 
-                       <label for="blue1">Blue : </label> 
-                       <input type="number" id="blue1" value="0" class="form-control"> 
-                     </div>
-                     <div class="form-group"> 
-                       <label for="brown1">Brown : </label> 
-                       <input type="number" id="brown1" value="0" class="form-control"> 
-                     </div>
-                     <div class="form-group"> 
-                       <label for="yellow1">Yellow: </label> 
-                       <input type="number" id="yellow1" value="0" class="form-control"> 
-                     </div>
-                     <div class="form-group"> 
-                       <label for="black1">Black : </label> 
-                       <input type="number" id="black1" value="0" class="form-control"> 
-                     </div>
-                      </div>
-                      <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
-                       <div class="form-group"> 
-                       <label for="blue2">Blue : </label> 
-                       <input type="number" id="blue2" value="0" class="form-control"> 
-                     </div>
-                     <div class="form-group"> 
-                       <label for="brown2">Brown : </label> 
-                       <input type="number" id="brown2" value="0" class="form-control"> 
-                     </div>
-                     <div class="form-group"> 
-                       <label for="yellow2">Yellow: </label> 
-                       <input type="number" id="yellow2" value="0" class="form-control"> 
-                     </div>
-                     <div class="form-group"> 
-                       <label for="black2">Black : </label> 
-                       <input type="number" id="black2" value="0" class="form-control"> 
-                     </div>
-                      </div>
-                      <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
-                        <div class="form-group"> 
-                       <label for="blue3">Blue : </label> 
-                       <input type="number" id="blue3" value="0" class="form-control"> 
-                     </div>
-                     <div class="form-group"> 
-                       <label for="brown3">Brown : </label> 
-                       <input type="number" id="brown3" value="0" class="form-control"> 
-                     </div>
-                     <div class="form-group"> 
-                       <label for="yellow3">Yellow: </label> 
-                       <input type="number" id="yellow3" value="0" class="form-control"> 
-                     </div>
-                     <div class="form-group"> 
-                       <label for="black3">Black : </label> 
-                       <input type="number" id="black3" value="0" class="form-control"> 
-                     </div>
-                      </div>
-                      <div id="chart"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> 
-         </section> 
-       </div> 
-       <footer class="main-footer"> 
-         <div class="footer-left"> 
-           Copyright &copy; 2024 
-         </div> 
-         <div class="footer-right"> 
-           1.0.0 
-         </div> 
-       </footer> 
-     </div> 
-   </div> 
+        <!-- Main Content -->  
+        <div class="main-content">  
+          <section class="section">  
+            <div class="section-header">  
+              <h1>Stock Tinta</h1>  
+            </div>  
   
-   <!-- General JS Scripts --> 
-   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script> 
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> 
-   <script src="assets/js/stisla.js"></script> 
+            <div class="section-body">  
+              <div class="row"> 
+               <div class="col-12 col-sm-5 col-lg-5"> 
+                 <div class="card"> 
+                   <div class="card-header"> 
+                     <h4>Stock Tinta <code>Akhir Shift</code></code> 
+                   </div> 
+                   <div class="card-body"> 
+                     <ul class="nav nav-pills" id="myTab3" role="tablist"> 
+                       <li class="nav-item"> 
+                         <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true">DP 1</a> 
+                       </li> 
+                       <li class="nav-item"> 
+                         <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false">DP 2</a> 
+                       </li> 
+                       <li class="nav-item"> 
+                         <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false">DP 3</a> 
+                       </li> 
+                     </ul> 
+                     <div class="tab-content" id="myTabContent2"> 
+                       <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3"> 
+                                            <div class="form-group">  
+                        <label for="blue1">Blue : </label>  
+                        <input type="number" id="blue1" placehorder="0" class="form-control">  
+                      </div> 
+                      <div class="form-group">  
+                        <label for="brown1">Brown : </label>  
+                        <input type="number" id="brown1" placehorder="0" class="form-control">  
+                      </div> 
+                      <div class="form-group">  
+                        <label for="yellow1">Yellow: </label>  
+                        <input type="number" id="yellow1" placehorder="0" class="form-control">  
+                      </div> 
+                      <div class="form-group">  
+                        <label for="black1">Black : </label>  
+                        <input type="number" id="black1" placehorder="0" class="form-control">  
+                      </div> 
+                       </div> 
+                       <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3"> 
+                        <div class="form-group">  
+                        <label for="blue2">Blue : </label>  
+                        <input type="number" id="blue2" placehorder="0" class="form-control">  
+                      </div> 
+                      <div class="form-group">  
+                        <label for="brown2">Brown : </label>  
+                        <input type="number" id="brown2" placehorder="0" class="form-control">  
+                      </div> 
+                      <div class="form-group">  
+                        <label for="yellow2">Yellow: </label>  
+                        <input type="number" id="yellow2" placehorder="0" class="form-control">  
+                      </div> 
+                      <div class="form-group">  
+                        <label for="black2">Black : </label>  
+                        <input type="number" id="black2" placehorder="0" class="form-control">  
+                      </div> 
+                       </div> 
+                       <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab3"> 
+                         <div class="form-group">  
+                        <label for="blue3">Blue : </label>  
+                        <input type="number" id="blue3" placehorder="0" class="form-control">  
+                      </div> 
+                      <div class="form-group">  
+                        <label for="brown3">Brown : </label>  
+                        <input type="number" id="brown3" placehorder="0" class="form-control">  
+                      </div> 
+                      <div class="form-group">  
+                        <label for="yellow3">Yellow: </label>  
+                        <input type="number" id="yellow3" placehorder="0" class="form-control">  
+                      </div> 
+                      <div class="form-group">  
+                        <label for="black3">Black : </label>  
+                        <input type="number" id="black3" placehorder="0" class="form-control">  
+                      </div> 
+                       </div> 
+                       <div id="chart"></div> 
+                     </div> 
+                   </div> 
+                 </div> 
+               </div> 
+             </div>  
+          </section>  
+        </div>  
+        <footer class="main-footer">  
+          <div class="footer-left">  
+            Copyright &copy; 2024  
+          </div>  
+          <div class="footer-right">  
+            1.0.0  
+          </div>  
+        </footer>  
+      </div>  
+    </div>  
   
-   <!-- JS Libraies --> 
+    <!-- General JS Scripts -->  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>  
+    <script src="assets/js/stisla.js"></script>  
   
-   <!-- Template JS File --> 
-   <script src="assets/js/scripts.js"></script> 
-   <script src="assets/js/custom.js"></script> 
+    <!-- JS Libraies -->  
   
-   <!-- Page Specific JS File --> 
- </body> 
- </html>
+    <!-- Template JS File -->  
+    <script src="assets/js/scripts.js"></script>  
+    <script src="assets/js/custom.js"></script>  
+  
+    <!-- Page Specific JS File -->  
+  </body>  
+  </html>
