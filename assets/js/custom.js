@@ -6,25 +6,47 @@
  */
 
 "use strict";
-function hitungStockAkhir() { 
-   var stockAwal = parseFloat(document.getElementById("stockAwal").value); 
-   var pemakaianSebelumnya = parseFloat(document.getElementById("pemakaianSebelumnya").value); 
-   var pemakaianSekarang = parseFloat(document.getElementById("pemakaianSekarang").value); 
-   var penambahanTinta = parseFloat(document.getElementById("penambahanTinta").value); 
-  
-   // Memeriksa apakah semua input telah diisi
-   if(isNaN(stockAwal) || isNaN(pemakaianSebelumnya) || isNaN(pemakaianSekarang) || isNaN(penambahanTinta)) {
-       // Jika ada input yang kosong, tampilkan pesan kesalahan di akhirPemakaian saja
-       document.getElementById("result").innerHTML = "";
-       document.getElementById("akhirPemakaian").innerHTML = "<div class='alert alert-danger'>Harap isi semua kolom.</div>";
-   } else {
-       // Jika semua input telah diisi, hitung dan tampilkan hasilnya di kedua tempat
-       var stockAkhir = stockAwal - pemakaianSebelumnya + pemakaianSekarang - penambahanTinta; 
-       var akhirPemakaian = stockAwal - stockAkhir; 
-  
-       document.getElementById("result").innerHTML = "<div class='alert alert-info'><b>Stock Akhir: </b>" + stockAkhir.toFixed(2) + "</div>"; 
-       document.getElementById("akhirPemakaian").innerHTML = "<div class='alert alert-success'><b>Jumlah Akhir Pemakaian: </b> " + akhirPemakaian.toFixed(2) + "</div>"
-   }
+function hitungStockAkhir() {
+  const v = id => parseFloat(document.getElementById(id).value);
+
+  const stockAwal            = v("stockAwal");
+  const stokAwalTanki        = v("pemakaianSebelumnya");  // Stock Awal Tanki
+  const stokAkhirTintaInput  = v("pemakaianSekarang");    // Kolom "Stock Akhir Tinta" (untuk AKTUAL)
+  const penambahanTintaKg    = v("penambahanTinta");      // kg
+  const stokTintaRakJerigen  = v("stocktintarak");        // jerigen
+
+  if ([stockAwal, stokAwalTanki, stokAkhirTintaInput, penambahanTintaKg, stokTintaRakJerigen].some(isNaN)) {
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("akhirPemakaian").innerHTML =
+      "<div class='alert alert-danger'>Harap isi semua kolom.</div>";
+    return;
+  }
+
+  const stokTintaRakKg = stokTintaRakJerigen * 6;
+
+  // Stock Akhir (hasil rumus)
+  const stockAkhir = stockAwal - stokAwalTanki + stokAkhirTintaInput - penambahanTintaKg;
+
+  // Hasil Akhir Pemakaian (seperti sebelumnya)
+  const akhirPemakaian = stockAwal - stockAkhir;
+
+  // Aktual = kolom "Stock Akhir Tinta" + stok rak (kg)
+  const aktual = stokAkhirTintaInput + stokTintaRakKg;
+
+  // Selisih = Aktual − Stock Akhir (hasil rumus)
+  let selisih = aktual - stockAkhir;
+  if (Math.abs(selisih) < 0.005) selisih = 0; // toleransi pembulatan
+
+  // Tampilkan berurutan: Stock Akhir, Hasil Akhir Pemakaian, Aktual, Selisih
+  document.getElementById("result").innerHTML = `
+    <div class='alert alert-info'><b>Stock Akhir:</b> ${stockAkhir.toFixed(2)} kg</div>
+    <div class='alert alert-success'><b>Hasil Akhir Pemakaian:</b> ${akhirPemakaian.toFixed(2)} kg</div>
+    <div class='alert alert-primary'><b>Aktual (Akhir Tinta + Rak):</b> ${aktual.toFixed(2)} kg</div>
+    <div class='alert alert-warning'><b>Selisih (Aktual − Stock Akhir):</b> ${selisih.toFixed(2)} kg</div>
+  `;
+
+  // kosongkan panel bawah jika tak dipakai lagi
+  document.getElementById("akhirPemakaian").innerHTML = "";
 }
   
  function resetKalkulator() { 
