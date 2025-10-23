@@ -54,6 +54,7 @@ function hitungStockAkhir() {
    document.getElementById("pemakaianSebelumnya").value = ""; 
    document.getElementById("pemakaianSekarang").value = ""; 
    document.getElementById("penambahanTinta").value = ""; 
+document.getElementById("stocktintarak").value = ""; 
    document.getElementById("result").innerHTML = ""; 
    document.getElementById("akhirPemakaian").innerHTML = ""; 
  }
